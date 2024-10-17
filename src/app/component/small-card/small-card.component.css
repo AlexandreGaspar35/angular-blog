@@ -28,3 +28,70 @@
 .small-card__description > a > p {
   color: gray;
 }
+
+@media (max-width: 1200px) { /* Para tablets ou telas maiores */
+  .container__small-card {
+    width: 500px;
+  }
+
+  .small-card__photo > img {
+    width: 200px; /* Ajusta o tamanho da imagem */
+  }
+
+  .small-card__title > a > h1 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) { /* Para tablets em modo retrato ou pequenos laptops */
+  .container__small-card {
+    width: 100%; /* Largura total da tela para se ajustar */
+  }
+
+  .container__small-card-content {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .small-card__photo > img {
+    width: 100%; /* Imagem ocupa toda a largura disponível */
+    max-width: 250px; /* Limite de largura */
+  }
+
+  .small-card__title > a > h1 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) { /* Para smartphones */
+  .container__small-card {
+    width: 100%; /* Ocupar 100% da tela */
+  }
+
+  .container__small-card-content {
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .small-card__photo > img {
+    width: 100%; /* Ajusta a imagem para preencher a largura da tela */
+    max-width: 200px; /* Tamanho máximo para manter a proporção */
+  }
+
+  .small-card__title > a > h1 {
+    font-size: 12px; /* Reduz o tamanho da fonte para smartphones */
+    text-align: center;
+  }
+
+  .small-card__description > a > p {
+    font-size: 12px; /* Ajusta o tamanho da descrição */
+    text-align: center;
+  }
+
+  .small-card__text {
+    margin-left: 0; /* Remove a margem esquerda em telas pequenas */
+    align-items: center; /* Centraliza o texto */
+  }
+}

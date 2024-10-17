@@ -13,3 +13,36 @@
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
+@media (max-width: 1200px) { /* Para tablets ou telas grandes */
+    .container__menu-title > h1 {
+        font-size: 80px; /* Reduz o tamanho do h1 em telas médias */
+    }
+
+    .container__menu-title > hr {
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 768px) { /* Para tablets em modo retrato ou pequenos laptops */
+    .container__menu-title > h1 {
+        font-size: 60px; /* Reduz ainda mais para telas médias */
+    }
+
+    .container__menu-title > hr {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) { /* Para smartphones */
+    .container__menu-title > h1 {
+        font-size: 40px; /* Tamanho menor para telas pequenas */
+    }
+
+    .container__menu-title > hr {
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+}
