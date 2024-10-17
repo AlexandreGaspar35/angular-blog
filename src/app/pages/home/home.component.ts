@@ -4,14 +4,16 @@ import { MenuTitleComponent } from '../../component/menu-title/menu-title.compon
 import { BigCardComponent } from '../../component/big-card/big-card.component';
 import { SmallCardComponent } from '../../component/small-card/small-card.component';
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MenuBarComponent, MenuTitleComponent, BigCardComponent, SmallCardComponent],
+  imports: [
+    MenuBarComponent,
+    MenuTitleComponent,
+    BigCardComponent,
+    SmallCardComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
