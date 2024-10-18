@@ -1,28 +1,36 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { BigCardComponent } from "../../component/big-card/big-card.component";
+import { BigCardComponent } from '../../component/big-card/big-card.component';
+import { dataFake } from '../../data/dataFake';
 
 @Component({
   selector: 'app-content',
   standalone: true,
   imports: [RouterLink, BigCardComponent],
   templateUrl: './content.component.html',
-  styleUrl: './content.component.css'
+  styleUrl: './content.component.css',
 })
 export class ContentComponent {
   @Input()
-  photoCoverContent: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlxAW62lZHkm4lez12lEDzIrhBDjjzCeBxnw&s';
+  photoCoverContent: string = '';
   @Input()
-  titleContent: string = 'Roteamento Angular';
+  titleContent: string = '';
   @Input()
-  descriptionContent: string = 'Angular Route transforma sua aplicação em uma Single Page Application, que tem várias visualizações adicionando roteamento.';
+  descriptionContent: string = '';
 
+  private id: string | null = '0';
 
-  constructor (private route:ActivatedRoute){
-    this.route.paramMap.subscribe( value =>
-      console.log(value.get("id"))
-    )
+  constructor(private route: ActivatedRoute) {
+    this.route.paramMap.subscribe((value) => (this.id = value.get('id')));
+
+    this.setValuesToContent(this.id);
   }
 
-  
+  setValuesToContent(id: string | null) {
+    const result = dataFake.filter((article) => article.id == id)[0];
+
+    this.photoCoverContent = result.photoCover;
+    this.titleContent = result.title;
+    this.descriptionContent = result.description;
+  }
 }
